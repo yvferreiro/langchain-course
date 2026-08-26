@@ -130,12 +130,15 @@ jupyter lab
 
 ### Run Studio (optional)
 
-Ensure you are in the notebooks/module-1 or notebooks/module-3 directory
+[LangGraph Studio](https://docs.langchain.com/langgraph-platform/langgraph-studio) is a visual IDE for building and debugging agents: it renders your graph, lets you run/replay it step-by-step, inspect state at each node, and edit prompts or inputs on the fly — much faster than iterating through print statements in a notebook.
 
- <details open>
+`langgraph dev` looks for a `langgraph.json` config in the current directory, so `cd` into the module first (only Module 1 and Module 3 have one).
+
+<details open>
 <summary>Using uv (recommended)</summary>
 
 ```bash
+cd notebooks/module-1  # or notebooks/module-3
 uv run langgraph dev
 ```
 
@@ -145,11 +148,14 @@ uv run langgraph dev
 <summary>Using pip</summary>
 
 ```bash
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+cd notebooks/module-1  # or notebooks/module-3
+source ../../.venv/bin/activate  # On Windows: ..\..\.venv\Scripts\activate
 langgraph dev
 ```
 
 </details>
+
+This starts a local server and prints a Studio URL — open it in Chrome to interact with the graph.
 
 ## 📚 Lessons
 This repository contains three Modules that serve as introductions to many of LangChain's most-used features.
